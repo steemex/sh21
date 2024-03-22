@@ -2,7 +2,7 @@
 #define NMAX 5
 
 int read(int *arr); // returns 0 if OK, returns 1 in case of problem
-void sort();
+void sort(int *arr);
 void print(int *arr);
 
 int main() {
@@ -13,7 +13,7 @@ int main() {
         return 1;
     }
     
-//    sort(arr);
+    sort(arr);
     print(arr);
 
     return 0;
@@ -42,5 +42,15 @@ int read(int *arr) {
 void print(int *arr) {
     for (int i=0; i<NMAX; i++) {
         printf("%d ", arr[i]);
+    }
+}
+void sort(int *arr) {
+    for (int i=0; i<NMAX; i++) {
+        while (arr[i] < arr[i-1] && i-1>0 ) {
+            int temp;
+            temp=arr[i];
+            arr[i]=arr[i-1];
+            arr[i-1]=temp;
+        }
     }
 }
