@@ -1,1 +1,0 @@
-genhtml -o report s21_test.info
